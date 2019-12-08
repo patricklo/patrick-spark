@@ -20,6 +20,10 @@ public class WordCountLocal {
         SparkConf conf = new SparkConf().setAppName("WordCountLocal").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> lines = sc.textFile("/Users/patricklo/Documents/test.txt");
+
+        /**
+         * flatMap ->  将一行拆分成单独单词
+         */
         JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
             private static final long serialVersionUID  = 1L;
             @Override
@@ -27,7 +31,9 @@ public class WordCountLocal {
                 return Arrays.asList(line.split(" "));
             }
         });
-
+        /**
+         * 将每个单词拆分成 (单词,1)的map,这样后面就可以groupby key, 把value sum起来  -》达到统计的作用
+         */
         JavaPairRDD<String,Integer> pairs = words.mapToPair(new PairFunction<String, String, Integer>() {
             private static final long serialVersionUID  = 1L;
             @Override
@@ -36,6 +42,9 @@ public class WordCountLocal {
             }
         });
 
+        /**
+         * reduceBy key, 把value sum起来  -》达到统计的作用
+         */
         JavaPairRDD<String,Integer> wordCounts = pairs.reduceByKey(new Function2<Integer, Integer, Integer>() {
             @Override
             public Integer call(Integer integer, Integer integer2) throws Exception {

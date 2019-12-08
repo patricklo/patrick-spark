@@ -13,7 +13,7 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 /**
- * 本地测试程序
+ * 放上集群服务测试程序
  */
 public class WordCountCluster {
     public static void main(String[] args){
@@ -22,6 +22,24 @@ public class WordCountCluster {
         //2. 从读取本地文件 -》  读取hadoop hdfs服务器上的存储的大文件
         //3。 打包 放上spark1中
         //4. 编写 spark submit脚本，提交到集群中运行
+
+
+        /**
+         * 运行步骤
+         *
+         * 1. @spark1
+         * cd /usr/local/
+         * hadoop fs -put test.txt
+         *
+         *  以上命令是将本地test.txt文件 放进hadoop环境中
+         *
+         *  http://spark1:50070/explorer.html#/ - 可查看有没有成功放入
+         *
+         *  2. 使用maven插件 本地打包  maven package
+         *  3.将Jar（with-dependencies包放到spark1  目录 ：/usr/local/spark-test/java
+         *
+         *  4.编写运行脚本 wordcount.sh并运行即可 /usr/local/spark-test/java/wordcount.sh
+         */
         SparkConf conf = new SparkConf().setAppName("WordCountCluster");
         JavaSparkContext sc = new JavaSparkContext(conf);
         //JavaRDD<String> lines = sc.textFile("/Users/patricklo/Documents/test.txt");
