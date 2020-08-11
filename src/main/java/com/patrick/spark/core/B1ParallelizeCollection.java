@@ -8,7 +8,7 @@ import org.apache.spark.api.java.function.Function2;
 import java.util.Arrays;
 import java.util.List;
 
-public class ParallelizeCollection {
+public class B1ParallelizeCollection {
     /**
      * 并行化创建集合RDD
      * @param args

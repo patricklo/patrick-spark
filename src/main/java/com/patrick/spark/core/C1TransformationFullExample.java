@@ -26,7 +26,7 @@ import java.util.List;
  * 6. join 对2个包含<Key,value>对的RDD进行join操作，每个key join上的新pair，都会传入到自定义函数进行处理
  * 7. cogroup 同join,但每个key上的iterable<value>都会传入自定义函数进行处理
  */
-public class TransformationFullExample {
+public class C1TransformationFullExample {
 
     /**
      * 1. map    将集合每个元素乘以2
@@ -40,14 +40,14 @@ public class TransformationFullExample {
      */
 
     public static void main(String[] args) {
-        //TransformationFullExample.map();
+        C1TransformationFullExample.map();
         //filter();
         //flatMap();
         //groupByKey();
         //reduceByKey();
         //sortByKey();
         //join();
-        cogroup();
+        //cogroup();
     }
 
 

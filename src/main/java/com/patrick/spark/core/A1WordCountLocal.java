@@ -15,7 +15,7 @@ import java.util.Arrays;
 /**
  * 1. 本地测试程序
  */
-public class WordCountLocal {
+public class A1WordCountLocal {
     public static void main(String[] args){
         /**第1步： 创建spark conf对象，设置spark应用的配置信息*/
         //setMaster可以设置spark应用程序要连接的spark集群的Master节点的url,
@@ -71,7 +71,7 @@ public class WordCountLocal {
                 return integer+integer2;
             }
         });
-        
+
         wordCounts.foreach(new VoidFunction<Tuple2<String, Integer>>() {
             @Override
             public void call(Tuple2<String, Integer> wordCount) throws Exception {

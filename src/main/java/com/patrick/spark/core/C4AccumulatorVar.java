@@ -11,9 +11,9 @@ import org.apache.spark.broadcast.Broadcast;
 import java.util.Arrays;
 import java.util.List;
 
-public class AccumulatorVar {
+public class C4AccumulatorVar {
     public static void main(String[] args){
-        SparkConf conf =new SparkConf().setAppName("BroadcastVariable").setMaster("local");
+        SparkConf conf =new SparkConf().setAppName("AccumulatorVar").setMaster("local");
         JavaSparkContext javaSparkContext = new JavaSparkContext(conf);
 
         final Accumulator<Integer> sum = javaSparkContext.accumulator(0);

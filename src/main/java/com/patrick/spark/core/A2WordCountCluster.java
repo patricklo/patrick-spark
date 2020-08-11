@@ -15,17 +15,15 @@ import java.util.Arrays;
 /**
  * 放上集群服务测试程序
  */
-public class WordCountCluster {
+public class A2WordCountCluster {
     public static void main(String[] args){
         //将spark 运行放到集群上
         //1. 修改/删除 setMaster , 自己会去寻找
         //2. 从读取本地文件 -》  读取hadoop hdfs服务器上的存储的大文件
         //3。 打包 放上spark1中
         //4. 编写 spark submit脚本，提交到集群中运行
-
-
         /**
-         * 运行步骤
+         * 运行步骤:先参数文件 ：spark1_env_init_scripts
          *
          * 1. @spark1
          * cd /usr/local/

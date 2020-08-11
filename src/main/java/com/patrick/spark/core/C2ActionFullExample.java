@@ -22,7 +22,7 @@ import java.util.Map;
  * 6. countByKey
  * 7. foreach
  */
-public class ActionFullExample {
+public class C2ActionFullExample {
     public static void main(String[] args) {
         //reduce();
         //collect();

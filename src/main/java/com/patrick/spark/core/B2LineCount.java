@@ -9,7 +9,7 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.api.java.function.VoidFunction;
 import scala.Tuple2;
 
-public class LineCount {
+public class B2LineCount {
     public static void main(String[] args){
         //创建spark conf
         SparkConf sparkConf = new SparkConf().setAppName("LineCount").setMaster("local");

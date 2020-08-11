@@ -9,7 +9,7 @@ import org.apache.spark.api.java.JavaSparkContext;
  * 必须在trasformation或者是textFile等创建了一个RDD之后连续调用 cache()或persist()才可以
  * 如果先创建再调用 cache(）是没有用的
  */
-public class RDDPersist {
+public class C3RDDPersist {
     public static void main(String[] args){
         SparkConf conf = new SparkConf().setAppName("WordCountLocal").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -28,7 +28,7 @@ public class RDDPersist {
         count = lines.count();
         System.out.println(count);
         endTime = System.currentTimeMillis();
-        System.out.println(endTime-beginTime);
+        System.out.println("total time:"+(endTime-beginTime));
 
 
         sc.close();
